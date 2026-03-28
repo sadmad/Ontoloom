@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #05050f;
+  --surface: #0d0d1a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #3730a3; border-radius: 3px; }
+
+/* ─── React Flow overrides ─────────────────────────────── */
+.react-flow__background { background-color: transparent !important; }
+
+.react-flow__edge-path {
+  stroke-width: 1.5;
+}
+
+.react-flow__handle {
+  width: 8px !important;
+  height: 8px !important;
+  background: #334155 !important;
+  border: 1.5px solid #475569 !important;
+  border-radius: 50% !important;
+}
+
+.react-flow__handle:hover {
+  background: #7c3aed !important;
+  border-color: #a78bfa !important;
+}
+
+.react-flow__controls {
+  background: #0d0d1a !important;
+  border: 1px solid #1e1e3f !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: #0d0d1a !important;
+  border-bottom: 1px solid #1e1e3f !important;
+  color: #94a3b8 !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #1e1e3f !important;
+  color: #f8fafc !important;
+}
+
+.react-flow__attribution { display: none; }
+
+/* ─── Node pulse for central node ─────────────────────── */
+@keyframes node-pulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(124,58,237,0.4), 0 0 24px rgba(124,58,237,0.15); }
+  50%       { box-shadow: 0 0 24px rgba(124,58,237,0.7), 0 0 48px rgba(124,58,237,0.25); }
+}
+
+.node-central {
+  animation: node-pulse 3s ease-in-out infinite;
+}
+
+/* ─── Grid background for hero ─────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ─── Gradient text ────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Start button glow ────────────────────────────────── */
+@keyframes button-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(124,58,237,0.5), 0 0 30px rgba(124,58,237,0.2); }
+  50%       { box-shadow: 0 0 30px rgba(124,58,237,0.9), 0 0 60px rgba(124,58,237,0.35); }
+}
+
+.start-btn {
+  animation: button-glow 2.5s ease-in-out infinite;
+}
+
+/* ─── Footer gradient border ───────────────────────────── */
+.footer-top-border {
+  border-top: 1px solid transparent;
+  background-image: linear-gradient(#03030a, #03030a),
+    linear-gradient(90deg, #7c3aed, #06b6d4, #7c3aed);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}

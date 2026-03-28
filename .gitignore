@@ -1,0 +1,17 @@
+# Node
+web/node_modules/
+web/.next/
+web/.env*.local
+
+# Python
+backend/__pycache__/
+backend/.venv/
+backend/*.egg-info/
+*.pyc
+
+# Env
+.env
+.env.local
+
+# OS
+.DS_Store
